@@ -22,6 +22,12 @@ public class Taxe {
     public Taxe() {
     }
 
+    public Taxe(boolean pay, Taux taux, Terrain terrain) {
+        this.pay = pay;
+        this.taux = taux;
+        this.terrain = terrain;
+    }
+
     public long getId() {
         return id;
     }
@@ -54,5 +60,13 @@ public class Taxe {
         this.terrain = terrain;
     }
 
-
+    @Override
+    public String toString() {
+        return "Taxe{" +
+                "id=" + id +
+                ", pay=" + pay +
+                ", taux=" + taux +
+                ", terrain=" + terrain +
+                '}';
+    }
 }

@@ -17,6 +17,11 @@ public class Taux {
     public Taux() {
     }
 
+    public Taux(double prix, int annee) {
+        this.prix = prix;
+        this.annee = annee;
+    }
+
     public long getId() {
         return id;
     }
@@ -41,4 +46,12 @@ public class Taux {
         this.annee = annee;
     }
 
+    @Override
+    public String toString() {
+        return "Taux{" +
+                "id=" + id +
+                ", prix=" + prix +
+                ", annee=" + annee +
+                '}';
+    }
 }

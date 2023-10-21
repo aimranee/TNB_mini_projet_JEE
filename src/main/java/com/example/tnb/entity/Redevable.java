@@ -14,9 +14,15 @@ public class Redevable {
 
     private String nom;
     private String prenom;
-    private int cin;
+    private String cin;
 
     public Redevable() {
+    }
+
+    public Redevable(String nom, String prenom, String cin) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.cin = cin;
     }
 
     public long getId() {
@@ -43,11 +49,21 @@ public class Redevable {
         this.prenom = prenom;
     }
 
-    public int getCin() {
+    public String getCin() {
         return cin;
     }
 
-    public void setCin(int cin) {
+    public void setCin(String cin) {
         this.cin = cin;
+    }
+
+    @Override
+    public String toString() {
+        return "Redevable{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", cin='" + cin + '\'' +
+                '}';
     }
 }

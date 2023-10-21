@@ -20,13 +20,20 @@ public class Terrain {
 
     @ManyToOne
     @JoinColumn(name = "categorie_id")
-    private Categrie categorie;
+    private Categorie categorie;
 
     @OneToMany(mappedBy = "terrain", fetch = FetchType.EAGER)
     @JsonIgnore
     private List<Taxe> taxes;
 
     public Terrain() {
+    }
+
+    public Terrain(double surface, Redevable redevable, Categorie categorie, List<Taxe> taxes) {
+        this.surface = surface;
+        this.redevable = redevable;
+        this.categorie = categorie;
+        this.taxes = taxes;
     }
 
     public Long getId() {
@@ -53,11 +60,11 @@ public class Terrain {
         this.id = id;
     }
 
-    public Categrie getCategorie() {
+    public Categorie getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(Categrie categorie) {
+    public void setCategorie(Categorie categorie) {
         this.categorie = categorie;
     }
 
@@ -67,5 +74,16 @@ public class Terrain {
 
     public void setTaxes(List<Taxe> taxes) {
         this.taxes = taxes;
+    }
+
+    @Override
+    public String toString() {
+        return "Terrain{" +
+                "id=" + id +
+                ", surface=" + surface +
+                ", redevable=" + redevable +
+                ", categorie=" + categorie +
+                ", taxes=" + taxes +
+                '}';
     }
 }
